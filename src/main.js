@@ -32,6 +32,7 @@ const routes = [
 const router = new VueRouter({ mode: 'history', routes: routes});
 const app = new Vue(Vue.util.extend({ router }, App)).$mount('#app');
 const header = new Vue(Vue.util.extend({ router }, Header)).$mount('#header');
+const sidebar = new Vue(Vue.util.extend({ router }, SideBar)).$mount('#sidebar');
 new Vue({
   render: h => h(App),
 }).$mount('#app');

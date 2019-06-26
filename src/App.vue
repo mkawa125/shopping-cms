@@ -1,18 +1,16 @@
 <template>
-  <div id="app">
+  <div class="#">
     <div id="header"></div>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Online shopping cms"/>
+    <div id="sidebar"></div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+
   }
 }
 </script>

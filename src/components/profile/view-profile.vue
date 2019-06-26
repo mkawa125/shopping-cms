@@ -21,6 +21,8 @@
     }
 </script>
 
-<style scoped>
-
+<style>
+    .container{
+        margin-top: 25px;
+    }
 </style>
