@@ -24,5 +24,7 @@
 <style>
     .container{
         margin-top: 25px;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
     }
 </style>
