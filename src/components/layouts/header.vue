@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <nav class="navbar navbar-expand-md bg-dark navbar-dark" id="header">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top" id="header">
             <router-link class="navbar-brand" to="/" style="margin-right: 70px; margin-left: 20px; font-family: cursive">
                 ShoppingCenter</router-link>
             <button type="button" id="sidebarCollapse" class="btn btn-default">

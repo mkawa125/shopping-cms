@@ -12,6 +12,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Product Name</th>
+                                <th>Product Image</th>
                                 <th>Product Price</th>
                                 <th>Actions</th>
                             </tr>
@@ -20,6 +21,9 @@
                             <tr>
                                 <td>1</td>
                                 <td>Soap</td>
+                                <td>
+                                    <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
+                                </td>
                                 <td>5000 TZS</td>
                                 <td>
                                     <a href="#"><button class="btn btn-info btn-sm">view</button></a>
@@ -31,6 +35,9 @@
                             <tr>
                                 <td>1</td>
                                 <td>Soap</td>
+                                <td>
+                                    <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
+                                </td>
                                 <td>5000 TZS</td>
                                 <td>
                                     <a href="#"><button class="btn btn-info btn-sm">view</button></a>
@@ -42,6 +49,9 @@
                             <tr>
                                 <td>1</td>
                                 <td>Soap</td>
+                                <td>
+                                    <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
+                                </td>
                                 <td>5000 TZS</td>
                                 <td>
                                     <a href="#"><button class="btn btn-info btn-sm">view</button></a>
@@ -53,6 +63,23 @@
                             <tr>
                                 <td>1</td>
                                 <td>Soap</td>
+                                <td>
+                                    <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
+                                </td>
+                                <td>5000 TZS</td>
+                                <td>
+                                    <a href="#"><button class="btn btn-info btn-sm">view</button></a>
+                                    <a href="#"><button class="btn btn-warning btn-sm">edit</button></a>
+                                    <a href="#"><button class="btn btn-danger btn-sm">delete</button></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>1</td>
+                                <td>Computer</td>
+                                <td>
+                                    <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
+                                </td>
                                 <td>5000 TZS</td>
                                 <td>
                                     <a href="#"><button class="btn btn-info btn-sm">view</button></a>
@@ -75,6 +102,8 @@
     }
 </script>
 
-<style scoped>
-
+<style lang="css">
+    .container{
+        margin-top: 100px;
+    }
 </style>

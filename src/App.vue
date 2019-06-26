@@ -1,15 +1,7 @@
 <template>
   <div class="">
     <div id="header"></div>
-    <div class="row">
-      <div class="col-md-3">
-        <div id="sidebar"></div>
-      </div>
-      <div class="col-md-9">
-        <div id="home"></div>
-      </div>
-    </div>
-
+    <div id="sidebar"></div>
   </div>
 </template>
 
