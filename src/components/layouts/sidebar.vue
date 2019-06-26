@@ -107,4 +107,5 @@
 </style>
 <style>
     @import "../../assets/stylesheets/sidebar-styles.css";
+    @import "../../assets/fontawesome/css/font-awesome.min.css";
 </style>
