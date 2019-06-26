@@ -10,6 +10,7 @@ Vue.use(VueAxios, axios);
 
 import Header from './components/layouts/header';
 import SideBar from './components/layouts/sidebar';
+import ViewProfile from './components/profile/view-profile';
 import Home from './components/home';
 
 Vue.config.productionTip = false;
@@ -20,6 +21,11 @@ const routes = [
     name: 'home',
     path: '/',
     component: Home,
+  },
+  {
+    name: 'profile',
+    path: '/profile',
+    component: ViewProfile
   }
 ];
 
