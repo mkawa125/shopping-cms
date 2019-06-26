@@ -5,7 +5,7 @@
             <nav id="sidebar" class="side-bar">
                 <div class="sidebar-header">
                     <a href="#">
-                        <img :src="avatar" alt="No Avatar" class="avatar">
+                        <img src="../../assets/images/user.png" alt="No Avatar" class="avatar">
                         <h5>Dahabu Saidi</h5>
                         <span >Admin</span>
                     </a>
@@ -66,7 +66,12 @@
 
 <script>
     export default {
-        name: "sidebar"
+        name: "sidebar",
+        computed: {
+            image() {
+                return `/assets/images/user.png`;
+            }
+        },
     }
 </script>
 
