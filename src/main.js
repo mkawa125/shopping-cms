@@ -12,6 +12,7 @@ import Header from './components/layouts/header';
 import SideBar from './components/layouts/sidebar';
 import ViewProfile from './components/profile/view-profile';
 import Home from './components/home';
+import ViewProducts from './components/products/index';
 
 Vue.config.productionTip = false;
 
@@ -26,6 +27,11 @@ const routes = [
     name: 'profile',
     path: '/profile',
     component: ViewProfile
+  },
+  {
+    name: 'products',
+    path: '/products',
+    component: ViewProducts
   }
 ];
 
@@ -33,6 +39,7 @@ const router = new VueRouter({ mode: 'history', routes: routes});
 const app = new Vue(Vue.util.extend({ router }, App)).$mount('#app');
 const header = new Vue(Vue.util.extend({ router }, Header)).$mount('#header');
 const sidebar = new Vue(Vue.util.extend({ router }, SideBar)).$mount('#sidebar');
+const home = new Vue(Vue.util.extend({ router }, Home)).$mount('#home');
 new Vue({
   render: h => h(App),
 }).$mount('#app');

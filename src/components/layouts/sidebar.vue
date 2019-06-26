@@ -21,18 +21,18 @@
 
                     <li>
                         <a href="#">
-                            <i class="fa fa-handshake-o"></i> Mentors
+                            <i class="fa fa-handshake-o"></i> Products
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="fa fa-user"></i> Counselors
+                            <i class="fa fa-user"></i> Finance
                         </a>
                     </li>
 
                     <li>
                         <a href="#">
-                            <i class="fa fa-female"></i> Users
+                            <i class="fa fa-female"></i> Customers
                         </a>
                     </li>
 
