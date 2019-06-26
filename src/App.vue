@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div id="header"></div>
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Online shopping cms"/>
   </div>
