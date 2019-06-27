@@ -7,7 +7,7 @@
                     <div class="card-header">Products</div>
 
                     <div class="card-body">
-                        <table class="table table-bordered table-sm">
+                        <table class="table table-bordered table-sm" id="myTable">
                             <thead>
                             <tr>
                                 <th>No</th>
@@ -98,11 +98,12 @@
 
 <script>
     export default {
-        name: "index"
+        name: "index",
     }
 </script>
 
 <style scoped>
+    @import "";
     .container{
         margin-top: 100px;
     }
