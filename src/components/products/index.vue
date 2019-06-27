@@ -37,7 +37,7 @@
                                     <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
                                 </td>
                                 <td>5000 TZS</td>
-                                <td>
+                                <td class="action-column">
                                     <a href="#"><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button></a>
                                     <a href="#"><button class="btn btn-success btn-sm"><i class="fa fa-edit"></i></button></a>
                                     <a href="#"><button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>
@@ -51,7 +51,7 @@
                                     <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
                                 </td>
                                 <td>5000 TZS</td>
-                                <td>
+                                <td class="action-column">
                                     <a href="#"><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button></a>
                                     <a href="#"><button class="btn btn-success btn-sm"><i class="fa fa-edit"></i></button></a>
                                     <a href="#"><button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>
@@ -65,35 +65,7 @@
                                     <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
                                 </td>
                                 <td>5000 TZS</td>
-                                <td>
-                                    <a href="#"><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button></a>
-                                    <a href="#"><button class="btn btn-success btn-sm"><i class="fa fa-edit"></i></button></a>
-                                    <a href="#"><button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>1</td>
-                                <td>Soap</td>
-                                <td class="image-row">
-                                    <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
-                                </td>
-                                <td>5000 TZS</td>
-                                <td>
-                                    <a href="#"><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button></a>
-                                    <a href="#"><button class="btn btn-success btn-sm"><i class="fa fa-edit"></i></button></a>
-                                    <a href="#"><button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>1</td>
-                                <td>Computer</td>
-                                <td class="image-row">
-                                    <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
-                                </td>
-                                <td>5000 TZS</td>
-                                <td>
+                                <td class="action-column">
                                     <a href="#"><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button></a>
                                     <a href="#"><button class="btn btn-success btn-sm"><i class="fa fa-edit"></i></button></a>
                                     <a href="#"><button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>
@@ -129,12 +101,15 @@
     }
     .btn-sm{
         padding: 1px 4px;
-        margin-right: 3px;
+        margin-right: 4px;
     }
     .new-product{
         float: right;
         font-size: small;
         padding: 5px;
         border-radius: 20px;
+    }
+    .action-column{
+        text-align: center;
     }
 </style>
