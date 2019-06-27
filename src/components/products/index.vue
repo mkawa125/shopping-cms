@@ -7,7 +7,7 @@
                     <div class="card-header ">
                         <div class="row">
                         <div class="col-md-5">
-                            Products
+                            <strong class="list-title">List Of Products</strong>
                         </div>
                         <div class="col-md-7">
                             <button class="btn btn-success new-product btn-sm">
@@ -26,6 +26,7 @@
                                 <th>Product Name</th>
                                 <th>Product Image</th>
                                 <th>Product Price</th>
+                                <th>Quantity</th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
@@ -37,6 +38,7 @@
                                     <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
                                 </td>
                                 <td>5000 TZS</td>
+                                <td>52</td>
                                 <td class="action-column">
                                     <a href="#"><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button></a>
                                     <a href="#"><button class="btn btn-success btn-sm"><i class="fa fa-edit"></i></button></a>
@@ -51,6 +53,7 @@
                                     <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
                                 </td>
                                 <td>5000 TZS</td>
+                                <td>441</td>
                                 <td class="action-column">
                                     <a href="#"><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button></a>
                                     <a href="#"><button class="btn btn-success btn-sm"><i class="fa fa-edit"></i></button></a>
@@ -65,6 +68,7 @@
                                     <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
                                 </td>
                                 <td>5000 TZS</td>
+                                <td>100</td>
                                 <td class="action-column">
                                     <a href="#"><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button></a>
                                     <a href="#"><button class="btn btn-success btn-sm"><i class="fa fa-edit"></i></button></a>
@@ -111,5 +115,8 @@
     }
     .action-column{
         text-align: center;
+    }
+    .list-title{
+        font-family: cursive;
     }
 </style>
