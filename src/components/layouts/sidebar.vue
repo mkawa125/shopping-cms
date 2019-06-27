@@ -20,9 +20,9 @@
                     </li>
 
                     <li>
-                        <a href="#">
+                        <router-link to="/products">
                             <i class="fa fa-handshake-o"></i> Products
-                        </a>
+                        </router-link>
                     </li>
                     <li>
                         <a href="#">

@@ -13,6 +13,7 @@ import SideBar from './components/layouts/sidebar';
 import ViewProfile from './components/profile/view-profile';
 import Home from './components/home';
 import ViewProducts from './components/products/index';
+import CreateProduct from './components/products/create';
 
 Vue.config.productionTip = false;
 
@@ -32,7 +33,13 @@ const routes = [
     name: 'products',
     path: '/products',
     component: ViewProducts
+  },
+  {
+    name: 'add',
+    path: '/products/add',
+    component: CreateProduct
   }
+
 ];
 
 const router = new VueRouter({ mode: 'history', routes: routes});

@@ -10,9 +10,11 @@
                             <strong class="list-title">List Of Products</strong>
                         </div>
                         <div class="col-md-7">
-                            <button class="btn btn-success new-product btn-sm">
-                                <i class="fa fa-plus"></i> Add New Product
-                            </button>
+                            <router-link to="/products/add">
+                                <button class="btn btn-success new-product btn-sm">
+                                    <i class="fa fa-plus"></i> Add New Product
+                                </button>
+                            </router-link>
                         </div>
                         </div>
                     </div>
@@ -47,7 +49,7 @@
                             </tr>
 
                             <tr>
-                                <td>1</td>
+                                <td>2</td>
                                 <td>Soap</td>
                                 <td class="image-row">
                                     <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
@@ -62,7 +64,7 @@
                             </tr>
 
                             <tr>
-                                <td>1</td>
+                                <td>3</td>
                                 <td>Soap</td>
                                 <td class="image-row">
                                     <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
