@@ -4,8 +4,20 @@
             <div class="col-md-2"></div>
             <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header">Products</div>
-
+                    <div class="card-header ">
+                        <div class="row">
+                        <div class="col-md-5">
+                            Products
+                        </div>
+                        <div class="col-md-7">
+                            <button class="btn btn-success new-product btn-sm">
+                                <i class="fa fa-plus"></i> Add New Product
+                            </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                </div>
                     <div class="card-body">
                         <table class="table table-bordered table-sm" id="myTable">
                             <thead>
@@ -118,5 +130,11 @@
     .btn-sm{
         padding: 1px 4px;
         margin-right: 3px;
+    }
+    .new-product{
+        float: right;
+        font-size: small;
+        padding: 5px;
+        border-radius: 20px;
     }
 </style>
