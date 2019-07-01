@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
+var csrf_token = $('meta[name="csrf-token"]').attr('content');
 
 import VueAxios from 'vue-axios';
 import axios from 'axios';
