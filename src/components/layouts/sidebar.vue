@@ -54,7 +54,7 @@
 
                 <ul class="list-unstyled CTAs">
                     <li>
-                        <a href="#" @click="logout" class="article">
+                        <a href="#" class="article">
                             <i class="fa fa-sign-out"></i> Logout
                         </a>
                     </li>
