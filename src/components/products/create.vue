@@ -8,17 +8,18 @@
 
                 <div class="card-body">
                     <div class="col-md-12">
-                        <form @submit.prevent="saveProducts">
+                        <form v-on:submit="validateForm">
                             <div class="form-group">
                                 <label for="productName">Product Name</label>
-                                <div class="input-group">
+                                <div class="input-group"  v-bind:class="{ 'has-warning': attemptSubmit && missingProductName }">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
                                             <i class="fa fa-product-hunt"></i>
                                         </span>
                                     </div>
-                                    <input id="productName" name="ProductName" v-model="product.ProductName" class="form-control" placeholder="Product Name">
+                                    <input id="productName" name="ProductName" v-model="product.ProductName" class="form-control form-control-warning" placeholder="Product Name">
                                 </div>
+                                <div class="text-danger" v-if="attemptSubmit && missingProductName">This field is required.</div>
                             </div>
 
                             <div class="row">
@@ -100,7 +101,7 @@
                                     <textarea id="description" v-model="product.description" placeholder="Write product descriptions" class="form-control" rows="4"></textarea>
                                 </div>
                             </div>
-                            <button class="btn btn-info btn-block" type="submit">Save Product</button>
+                            <button class="btn btn-info btn-block">Save Product</button>
                         </form>
                     </div>
                 </div>
@@ -116,13 +117,30 @@
         data() {
             return {
                 product: {},
-                errors: {},
+                number: '',
+                name: "",
+                attemptSubmit: false,
             }
+
+        },
+        computed: {
+            missingProductName: function () { return this.name === ''; },
+            wrongNumber: function () {
+                return (
+                    this.isNumeric(this.number) === false ||
+                    this.number < 1 ||
+                    this.number > 10
+                )
+            },
         },
         methods: {
-            saveProducts() {
-                const productName = document.getElementById('productName').value;
-                console.log(this.product);
+            isNumeric: function (n) {
+                return !isNaN(parseFloat(n)) && isFinite(n);
+            },
+
+            validateForm: function (event) {
+                this.attemptSubmit = true;
+                if (this.missingProductName || this.wrongNumber) event.preventDefault();
             },
         },
     }
