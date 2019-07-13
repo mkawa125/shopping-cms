@@ -34,20 +34,18 @@
                             </thead>
                             <tbody>
                             <tr v-for="product in products" :key="product._id">
-
-                                {{ product.name}}
-                                <!--<td>1</td>-->
-                                <!--<td>{{ product.name}}</td>-->
-                                <!--<td class="image-row">-->
-                                    <!--<img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">-->
-                                <!--</td>-->
-                                <!--<td>{{ product.price}} TZS</td>-->
-                                <!--<td>52</td>-->
-                                <!--<td class="action-column">-->
-                                    <!--<a href="#"><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button></a>-->
-                                    <!--<a href="#"><button class="btn btn-success btn-sm"><i class="fa fa-edit"></i></button></a>-->
-                                    <!--<a href="#"><button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>-->
-                                <!--</td>-->
+                                <td>1</td>
+                                <td>{{ product.name}}</td>
+                                <td class="image-row">
+                                    <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
+                                </td>
+                                <td>{{ product.price}} TZS</td>
+                                <td>52</td>
+                                <td class="action-column">
+                                    <a href="#"><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button></a>
+                                    <a href="#"><button class="btn btn-success btn-sm"><i class="fa fa-edit"></i></button></a>
+                                    <a href="#"><button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
