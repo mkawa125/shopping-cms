@@ -8,10 +8,10 @@
 
                 <div class="card-body">
                     <div class="col-md-12">
-                        <form v-on:submit="validateForm">
+                        <form @submit.prevent="saveProducts">
                             <div class="form-group">
                                 <label for="productName">Product Name</label>
-                                <div class="input-group"  v-bind:class="{ 'has-warning': attemptSubmit && missingProductName }">
+                                <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
                                             <i class="fa fa-product-hunt"></i>
@@ -19,7 +19,6 @@
                                     </div>
                                     <input id="productName" name="ProductName" v-model="product.ProductName" class="form-control form-control-warning" placeholder="Product Name">
                                 </div>
-                                <div class="text-danger" v-if="attemptSubmit && missingProductName">This field is required.</div>
                             </div>
 
                             <div class="row">
@@ -82,8 +81,8 @@
                                             </div>
                                             <select name="visibility" v-model="product.visibility" id="visibility" class="form-control">
                                                 <option value="" selected>Select Visibility</option>
-                                                <option value="category1">Private</option>
-                                                <option value="category2">Public</option>
+                                                <option value="Private">Private</option>
+                                                <option value="public">Public</option>
                                             </select>
                                         </div>
                                     </div>
@@ -117,30 +116,13 @@
         data() {
             return {
                 product: {},
-                number: '',
-                name: "",
-                attemptSubmit: false,
+                errors: {},
             }
-
-        },
-        computed: {
-            missingProductName: function () { return this.name === ''; },
-            wrongNumber: function () {
-                return (
-                    this.isNumeric(this.number) === false ||
-                    this.number < 1 ||
-                    this.number > 10
-                )
-            },
         },
         methods: {
-            isNumeric: function (n) {
-                return !isNaN(parseFloat(n)) && isFinite(n);
-            },
-
-            validateForm: function (event) {
-                this.attemptSubmit = true;
-                if (this.missingProductName || this.wrongNumber) event.preventDefault();
+            saveProducts() {
+                const productName = document.getElementById('productName').value;
+                console.log(this.product);
             },
         },
     }

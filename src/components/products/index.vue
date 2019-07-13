@@ -33,49 +33,21 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Soap</td>
-                                <td class="image-row">
-                                    <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
-                                </td>
-                                <td>5000 TZS</td>
-                                <td>52</td>
-                                <td class="action-column">
-                                    <a href="#"><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button></a>
-                                    <a href="#"><button class="btn btn-success btn-sm"><i class="fa fa-edit"></i></button></a>
-                                    <a href="#"><button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>
-                                </td>
-                            </tr>
+                            <tr v-for="product in products" :key="product._id">
 
-                            <tr>
-                                <td>2</td>
-                                <td>Soap</td>
-                                <td class="image-row">
-                                    <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
-                                </td>
-                                <td>5000 TZS</td>
-                                <td>441</td>
-                                <td class="action-column">
-                                    <a href="#"><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button></a>
-                                    <a href="#"><button class="btn btn-success btn-sm"><i class="fa fa-edit"></i></button></a>
-                                    <a href="#"><button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>3</td>
-                                <td>Soap</td>
-                                <td class="image-row">
-                                    <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
-                                </td>
-                                <td>5000 TZS</td>
-                                <td>100</td>
-                                <td class="action-column">
-                                    <a href="#"><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button></a>
-                                    <a href="#"><button class="btn btn-success btn-sm"><i class="fa fa-edit"></i></button></a>
-                                    <a href="#"><button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>
-                                </td>
+                                {{ product.name}}
+                                <!--<td>1</td>-->
+                                <!--<td>{{ product.name}}</td>-->
+                                <!--<td class="image-row">-->
+                                    <!--<img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">-->
+                                <!--</td>-->
+                                <!--<td>{{ product.price}} TZS</td>-->
+                                <!--<td>52</td>-->
+                                <!--<td class="action-column">-->
+                                    <!--<a href="#"><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button></a>-->
+                                    <!--<a href="#"><button class="btn btn-success btn-sm"><i class="fa fa-edit"></i></button></a>-->
+                                    <!--<a href="#"><button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>-->
+                                <!--</td>-->
                             </tr>
                             </tbody>
                         </table>
@@ -88,7 +60,25 @@
 
 <script>
     export default {
-        name: "index",
+        data(){
+            return {
+                products: []
+            }
+        },
+        created() {
+            let uri = 'http://localhost:4007/v1/products';
+            this.axios.get(uri).then(response => {
+                this.products = response.data.products;
+            })
+        },
+        methods: {
+            deletePost(id) {
+                let uri = `http://localhost:4007/v1/products/delete/${id}`;
+                this.axios.delete(uri).then(response => {
+                    this.products.splice(this.products.indexOf(id), 1);
+                });
+            }
+        }
     }
 </script>
 
