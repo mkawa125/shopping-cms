@@ -78,7 +78,7 @@
             deleteProduct(id) {
                 let uri = `http://localhost:4007/v1/products/delete/${id}`;
                 this.axios.delete(uri).then(response => {
-                    this.products.splice(this.products.indexOf(id), 1);
+                    this.products.splice(this.products._id, 1);
                 });
             }
         }
