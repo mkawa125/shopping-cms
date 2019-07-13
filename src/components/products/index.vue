@@ -29,6 +29,7 @@
                                 <th>Product Image</th>
                                 <th>Product Price</th>
                                 <th>Quantity</th>
+                                <th>Visibility</th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
@@ -40,11 +41,15 @@
                                     <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
                                 </td>
                                 <td>{{ product.price}} TZS</td>
-                                <td>52</td>
+                                <td>{{ product.quantity}}</td>
+                                <td>{{ product.visibility}}</td>
                                 <td class="action-column">
                                     <a href="#"><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button></a>
                                     <a href="#"><button class="btn btn-success btn-sm"><i class="fa fa-edit"></i></button></a>
-                                    <a href="#"><button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>
+
+                                    <button class="btn btn-danger btn-sm" @click.prevent="deleteProduct(product._id)">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
                                 </td>
                             </tr>
                             </tbody>
@@ -70,7 +75,7 @@
             })
         },
         methods: {
-            deletePost(id) {
+            deleteProduct(id) {
                 let uri = `http://localhost:4007/v1/products/delete/${id}`;
                 this.axios.delete(uri).then(response => {
                     this.products.splice(this.products.indexOf(id), 1);
