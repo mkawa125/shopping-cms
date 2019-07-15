@@ -10,28 +10,28 @@
                     <div class="col-md-12">
                         <form @submit.prevent="saveProducts">
                             <div class="form-group">
-                                <label for="productName">Product Name</label>
+                                <label for="name">Product Name</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
                                             <i class="fa fa-product-hunt"></i>
                                         </span>
                                     </div>
-                                    <input id="productName" name="ProductName" v-model="product.ProductName" class="form-control" placeholder="Product Name">
+                                    <input id="name" v-model="product.name" class="form-control form-control-warning" placeholder="Product Name">
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="productQuantity">Quantity</label>
+                                        <label for="quantity">Quantity</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                         <span class="input-group-text">
                                             <i class="fa fa-sort-amount-asc"></i>
                                         </span>
                                             </div>
-                                            <input id="productQuantity" type="number" name="productQuantity" v-model="product.productQuantity" class="form-control" placeholder="Product Quantity">
+                                            <input id="quantity" type="number" v-model="product.quantity" class="form-control" placeholder="Product Quantity">
                                         </div>
                                     </div>
                                 </div>
@@ -81,8 +81,8 @@
                                             </div>
                                             <select name="visibility" v-model="product.visibility" id="visibility" class="form-control">
                                                 <option value="" selected>Select Visibility</option>
-                                                <option value="category1">Private</option>
-                                                <option value="category2">Public</option>
+                                                <option value="Private">Private</option>
+                                                <option value="public">Public</option>
                                             </select>
                                         </div>
                                     </div>
@@ -100,7 +100,7 @@
                                     <textarea id="description" v-model="product.description" placeholder="Write product descriptions" class="form-control" rows="4"></textarea>
                                 </div>
                             </div>
-                            <button class="btn btn-info btn-block" type="submit">Save Product</button>
+                            <button class="btn btn-info btn-block">Save Product</button>
                         </form>
                     </div>
                 </div>
@@ -120,10 +120,12 @@
             }
         },
         methods: {
-            saveProducts() {
-                const productName = document.getElementById('productName').value;
-                console.log(this.product);
-            },
+            saveProducts(){
+                let uri = 'http://localhost:4007/v1/products/add';
+                this.axios.post(uri, this.product).then(() => {
+                    this.$router.push({name: 'products'});
+                });
+            }
         },
     }
 </script>

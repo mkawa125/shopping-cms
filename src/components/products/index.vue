@@ -29,52 +29,27 @@
                                 <th>Product Image</th>
                                 <th>Product Price</th>
                                 <th>Quantity</th>
+                                <th>Visibility</th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
+                            <tr v-for="product in products" :key="product._id">
                                 <td>1</td>
-                                <td>Soap</td>
+                                <td>{{ product.name}}</td>
                                 <td class="image-row">
                                     <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
                                 </td>
-                                <td>5000 TZS</td>
-                                <td>52</td>
+                                <td>{{ product.price}} TZS</td>
+                                <td>{{ product.quantity}}</td>
+                                <td>{{ product.visibility}}</td>
                                 <td class="action-column">
                                     <a href="#"><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button></a>
                                     <a href="#"><button class="btn btn-success btn-sm"><i class="fa fa-edit"></i></button></a>
-                                    <a href="#"><button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>
-                                </td>
-                            </tr>
 
-                            <tr>
-                                <td>2</td>
-                                <td>Soap</td>
-                                <td class="image-row">
-                                    <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
-                                </td>
-                                <td>5000 TZS</td>
-                                <td>441</td>
-                                <td class="action-column">
-                                    <a href="#"><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button></a>
-                                    <a href="#"><button class="btn btn-success btn-sm"><i class="fa fa-edit"></i></button></a>
-                                    <a href="#"><button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>3</td>
-                                <td>Soap</td>
-                                <td class="image-row">
-                                    <img src="../../assets/images/computer.jpg" alt="No Image" class="avatar">
-                                </td>
-                                <td>5000 TZS</td>
-                                <td>100</td>
-                                <td class="action-column">
-                                    <a href="#"><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button></a>
-                                    <a href="#"><button class="btn btn-success btn-sm"><i class="fa fa-edit"></i></button></a>
-                                    <a href="#"><button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>
+                                    <button class="btn btn-danger btn-sm" @click.prevent="deleteProduct(product._id)">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
                                 </td>
                             </tr>
                             </tbody>
@@ -88,7 +63,25 @@
 
 <script>
     export default {
-        name: "index",
+        data(){
+            return {
+                products: []
+            }
+        },
+        created() {
+            let uri = 'http://localhost:4007/v1/products';
+            this.axios.get(uri).then(response => {
+                this.products = response.data.products;
+            })
+        },
+        methods: {
+            deleteProduct(id) {
+                let uri = `http://localhost:4007/v1/products/delete/${id}`;
+                this.axios.delete(uri).then(response => {
+                    this.products.splice(this.products.indexOf(this.products._id), 1);
+                });
+            }
+        }
     }
 </script>
 
